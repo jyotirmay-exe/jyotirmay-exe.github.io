@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html {
+    font-size: 14px; 
+    scroll-behavior: smooth;
+}
+
+a, img{
+    font-family: "Montserrat";
+    color: inherit;
+    text-decoration: underline;
+    transition: transform 0.1s ease-in;
+}
+
+a:hover, .head-ribbon a:hover {
+    transform: scale(1.2);
+    color: #fff;
+    text-shadow: 0 0 2px #fff;
+}
+
+
+body {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: "Montserrat", "Roboto"; 
+    color: #dcdcdc; 
+    /* background: rgb(25, 30, 34); */
+    background-color: #11131b;
+    width: 100%; 
+    height: 100vh;
+    padding: 20px;
+    padding-top: 50px;
+    overflow-x: hidden; 
+}
+
+.head-ribbon {
+    width: 100%;
+    height: 30px;
+    box-shadow: -10px 5px 20px #000;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(25, 30, 34);
+    /* background-color: rgba(0, 100, 100, 1); */
+    padding: 20px;
+    transition: top 0.3s; 
+    z-index: 2000;
+}
+
+.head-ribbon.hidden {
+    top: -100px;
+}
+
+.head-ribbon a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 10px;
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 50px;
+}
+
+.nav-links a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+}
+
+.section {
+    height: 100vh;
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    text-align: justify;
+}
+
+
+.pfp {
+    width: 300px;
+    border-radius: 20px;
+    margin-inline: 50px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.pfp:hover {
+    transform: scale(1.1);
+}
+
+.home {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.home h1 {
+    font-size: 3.5rem;
+}
+
+.home p {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.downarrow {
+    display: none;
+}
+
+.about p {
+    text-align: justify;
+}
+
+.skills, .projects, .contact {
+    flex-direction: column;
+}
+
+.sub-category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-block: 10px;
+}
+
+.sub-category .label {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.contents img {
+    height: 3rem;
+    padding-inline: 20px;
+}
+
+.skillunit {
+    font-family: "Jost", sans-serif;
+    font-weight: 400;
+    font-size: 0rem;
+    margin-inline: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.skillunit.hover-effect {
+    transform: scale(1.2);
+    text-shadow: 0 0 2px #fff;
+}
+
+.contact a {
+    text-decoration: none;
+}
+
+.skillunit img {
+    margin-bottom: -10px;
+}
+
+.contents {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.ghcard {
+    width: 400px;
+    background-color: rgb(22, 22, 22); 
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0px 12px rgba(0, 0, 0, 0.5); 
+    text-align: center;
+    color: white;
+    padding: 0px;
+    margin-inline: -20px;
+    margin-top: 10px;
+    transition: transform 0.3s ease;
+}
+
+.ghcard:hover {
+    transform: translateY(-5px);
+}
+
+.ghcard-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.screenshot {
+    width: 400px;
+    border-bottom: 1px solid #707070;
+    height: 225px;
+    background-color: rgb(25, 30, 34);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.screenshot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+}
+
+p {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.7); 
+}
+
+.ghcardcurr {
+    z-index: 1000;
+}
+
+.ghbuttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 1rem;
+}
+
+.ghbuttons button {
+    background-color: #257fb8;
+    font-family: "Jost";
+    width: 8rem;
+    font-size: 1rem;
+    font-weight: 700;
+    box-shadow: 0 4px 6px rgba(37, 127, 184, 0.6), 0 1px 3px rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-weight: 400;
+    border: none;
+    padding: 10px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ghbuttons button:hover {
+    background-color: rgb(0, 105, 217); 
+}
+
+.tags {
+    padding: 10px;
+    display: flex;
+    justify-content: center; 
+    gap: 0.6rem; 
+    font-size: 0.8rem;
+}
+
+.tag {
+    color: #ff8800;
+    font-weight: 700;
+    border-radius: 20px;
+    padding: 2px 5px;
+    background-color: #693800;
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-button {
+    background-color: #2c9e52;
+    box-shadow: 0 4px 6px rgba(44, 158, 82, 0.6), 0 1px 3px rgba(255, 255, 255, 0.2);
+    font-weight: 700;
+    margin: 30px 20px;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:active {
+    background-color: #19582e 
+}
+
+.ghcardprev, .ghcardnext {
+    transform: scale(0.8);
+    opacity: 0.5;
+}
+
+.screenshot img:hover {
+    transform: none;
+}
+
+@media (max-width: 1000px) {
+    html {
+        font-size: 12px;
+    }
+
+    .section {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 700px) {
+    html {
+        font-size: 10px; 
+    }
+
+    .head-ribbon {
+        height: 20px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    body {
+        padding: 20px;
+        padding-top: 0px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    p {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    
+    .section {
+        height: 700px;
+        margin-top: inherit;
+        padding-top: 100px;
+        font-size: 1.5rem; 
+    }
+
+    .home h1 {
+        font-size: 2.2rem;
+    }
+    
+    .home p {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .downarrow {
+        font-size: 0;
+        margin-top: 5rem;
+        display: block;
+        background-color: #adadad;
+        padding: 1px; 
+        border-radius: 50%;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .head-ribbon p {
+        display: none;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: fixed;
+        top: 50px;
+        left: 0;
+        background-color: inherit;
+        border-bottom: 1px solid #dcdcdc;
+    }
+
+    .nav-links a {
+        text-align: center;
+        padding: 15px;
+        font-size: 1.5rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .pfp {
+        width: 120px;
+        margin-inline: 20px; 
+    }
+
+    .skills {
+        flex-direction: column;
+    }
+
+    .sub-category {
+        padding-block: 10px;
+    }
+
+    .sub-category .label {
+        font-size: 12px; 
+    }
+
+    .skillunit img {
+        height: 3.5rem; 
+        padding: 5px;
+    }
+    
+    .skillunit p {
+        font-size: 1rem;
+    }
+
+    .ghcard {
+        width: 350px;
+    }
+
+    .iframe {
+        width: 30px;
+        display: none;
+    }
+
+    .screenshot {
+        width: 350px;
+        height: 200px;
+    }
+
+    .ghcardprev, .ghcardnext {
+        display: none;
+    }
+}
