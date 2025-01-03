@@ -27,22 +27,6 @@ function toggleMenu() {
     navLinks.classList.toggle("active");
 }
 
-// let lastScrollTop = 0;
-// document.addEventListener("scroll", () => {
-//     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-//     const navLinks = document.querySelector(".nav-links");
-//     const headRibbon = document.querySelector(".head-ribbon");
-
-//     if (currentScroll > lastScrollTop) {
-//         headRibbon.classList.add("hidden");
-//         navLinks.classList.remove("active");
-//     } else {
-//         headRibbon.classList.remove("hidden");
-//     }
-
-//     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-// });
-
 const projects = [
     {
         name: "Flask Chat Hub",
@@ -86,12 +70,22 @@ const projects = [
     },
 ];
 
-let i = 0;
+function preloadImages(projects) {
+    projects.forEach(project => {
+        const img = new Image();
+        img.src = project.screenshot;
+    });
+}
+preloadImages(projects);
 
+let i = 0;
 function updateCard() {
+    const prevIndex = (i - 1 + projects.length) % projects.length;
+    const nextIndex = (i + 1) % projects.length;
+
+    const pproject = projects[prevIndex];
     const cproject = projects[i];
-    const pproject = projects[i - 1 < 0 ? projects.length - 1 : i - 1];
-    const nproject = projects[i + 1 > projects.length - 1 ? 0 : i + 1];
+    const nproject = projects[nextIndex];
 
     document.getElementById("proj-name0").textContent = pproject.name;
     document.getElementById("proj-desc0").textContent = pproject.description;
@@ -126,12 +120,44 @@ function updateCard() {
 
 function prevProject() {
     i = (i - 1 + projects.length) % projects.length;
-    updateCard();
+
+    const prevCard = document.querySelector(".ghcardprev");
+    const currCard = document.querySelector(".ghcardcurr");
+    const nextCard = document.querySelector(".ghcardnext");
+
+    prevCard.className = "ghcard ghcardnext";
+    currCard.className = "ghcard ghcardcurr";
+    nextCard.className = "ghcard ghcardprev";
+
+    setTimeout(() => {
+        prevCard.className = "ghcard ghcardprev";
+        currCard.className = "ghcard ghcardcurr";
+        nextCard.className = "ghcard ghcardnext";
+        updateCard();
+    }, 300);
 }
 
 function nextProject() {
     i = (i + 1) % projects.length;
-    updateCard();
+
+    const prevCard = document.querySelector(".ghcardprev");
+    const currCard = document.querySelector(".ghcardcurr");
+    const nextCard = document.querySelector(".ghcardnext");
+
+    prevCard.className = "ghcard ghcardnext";
+    currCard.className = "ghcard ghcardcurr";
+    nextCard.className = "ghcard ghcardprev";
+
+    setTimeout(() => {
+        prevCard.className = "ghcard ghcardprev";
+        currCard.className = "ghcard ghcardcurr";
+        nextCard.className = "ghcard ghcardnext";
+        updateCard();
+    }, 300);
+}
+
+function delay(milliseconds) {
+    return new Promise(resolve => setTimeout(resolve, milliseconds));
 }
 
 const skillUnits = document.querySelectorAll('.skillunit');
