@@ -27,21 +27,21 @@ function toggleMenu() {
     navLinks.classList.toggle("active");
 }
 
-let lastScrollTop = 0;
-document.addEventListener("scroll", () => {
-    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-    const navLinks = document.querySelector(".nav-links");
-    const headRibbon = document.querySelector(".head-ribbon");
+// let lastScrollTop = 0;
+// document.addEventListener("scroll", () => {
+//     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+//     const navLinks = document.querySelector(".nav-links");
+//     const headRibbon = document.querySelector(".head-ribbon");
 
-    if (currentScroll > lastScrollTop) {
-        headRibbon.classList.add("hidden");
-        navLinks.classList.remove("active");
-    } else {
-        headRibbon.classList.remove("hidden");
-    }
+//     if (currentScroll > lastScrollTop) {
+//         headRibbon.classList.add("hidden");
+//         navLinks.classList.remove("active");
+//     } else {
+//         headRibbon.classList.remove("hidden");
+//     }
 
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-});
+//     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+// });
 
 const projects = [
     {
