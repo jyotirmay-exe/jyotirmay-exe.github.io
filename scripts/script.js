@@ -14,6 +14,20 @@ document.addEventListener("DOMContentLoaded", () => {
     cycleHoverEffect();
 });
 
+let scroll = 0;
+document.addEventListener("scroll", () => {
+    const currscroll = window.pageYOffset || document.documentElement.scrollTop;
+    const navLinks = document.querySelector(".nav-links");
+    const headRibbon = document.querySelector(".head-ribbon");
+    if (currscroll > scroll) {
+        headRibbon.classList.add("hidden");
+        navLinks.classList.remove("active");
+    } else {
+        headRibbon.classList.remove("hidden");
+    }
+    scroll = currscroll <= 0 ? 0 : currscroll;
+});
+
 function toggleMenu() {
     const hamburgerMenu = document.getElementById("hamburger-menu");
     const navLinks = document.querySelector(".nav-links");
