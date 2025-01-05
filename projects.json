@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Flask Chat Hub",
+        "description": "A real-time socket-based chat application built with Flask.",
+        "repo": "https://github.com/jyotirmay-exe/flask-chatHUB",
+        "live": "https://flask-chatHUB.onrender.com",
+        "screenshot": "/img/chathub.png",
+        "tags": ["python", "flask", "socket.io"]
+    },
+    {
+        "name": "Sorting Visualizer",
+        "description": "Interactive sorting algorithm visualizer built with JavaScript.",
+        "repo": "https://github.com/jyotirmay-exe/sorting-visualizer",
+        "live": "https://web-sorting-visualizer.netlify.app/",
+        "screenshot": "/img/sort.png",
+        "tags": ["html/css", "javascript", "dsa"]
+    },
+    {
+        "name": "HangMan Game",
+        "description": "Web HangMan game built using HTML, CSS & JS.",
+        "repo": "https://github.com/jyotirmay-exe/HangMan",
+        "live": "https://simple-web-hangman.netlify.app/",
+        "screenshot": "/img/hangman.png",
+        "tags": ["html/css", "javascript", "hangman"]
+    },
+    {
+        "name": "b3-plugin-disCOD",
+        "description": "A B3 plugin for Call of Duty 4 Discord Bot 'disCOD'.",
+        "repo": "https://github.com/jyotirmay-exe/b3-plugin-disCOD",
+        "live": null,
+        "screenshot": "/img/discod.png",
+        "tags": ["python", "mysql", "big-brother-bot"]
+    },
+    {
+        "name": "COD4 RCON",
+        "description": "Python Remote CLI RCON client for Call of Duty 4 servers.",
+        "repo": "https://github.com/jyotirmay-exe/py-cod4_rcon",
+        "live": null,
+        "screenshot": "/img/rcon.png",
+        "tags": ["python", "cod4", "sockets", "udp"]
+    }
+]
