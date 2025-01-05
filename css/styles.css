@@ -137,7 +137,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-block: 10px;
+    padding-block: 0;
 }
 
 .sub-category .label {
@@ -159,7 +159,7 @@ body {
 }
 
 .skillunit.hover-effect {
-    transform: scale(1.2);
+    transform: scale(1.13);
     text-shadow: 0 0 2px #fff;
 }
 
@@ -190,11 +190,33 @@ body {
     padding: 0px;
     margin-inline: -20px;
     margin-top: 10px;
-    transition: transform 0.3s ease;
+    transition: all 0.5s ease;
 }
 
-.ghcard:hover {
-    transform: translateY(-5px);
+.ghcardprev, .ghcardnext , .ghcardprevtsn, .ghcardnexttsn, .ghcardcurrtsn{
+    opacity: 0.8;
+    filter: blur(5px);
+    z-index: 0;
+}
+
+.ghcardprev {
+    transform: translateX(-5%); 
+}
+
+.ghcardprevtsn {
+    transform: translateX(20%);
+}
+
+.ghcardcurr {
+    transform: translateX(0); 
+}
+
+.ghcardnext {
+    transform: translateX(5%); 
+}
+
+.ghcardnexttsn {
+    transform: translateX(-20%);
 }
 
 .ghcard-content {
@@ -205,7 +227,7 @@ body {
 
 .screenshot {
     width: 400px;
-    border-bottom: 1px solid #707070;
+    border-bottom: 2px solid #707070;
     height: 225px;
     background-color: rgb(25, 30, 34);
     display: flex;
@@ -248,20 +270,20 @@ p {
 .ghbuttons button {
     background-color: #257fb8;
     font-family: "Jost";
-    width: 8rem;
-    font-size: 1rem;
+    width: 5rem;
+    font-size: 0.8rem;
     font-weight: 700;
-    box-shadow: 0 4px 6px rgba(37, 127, 184, 0.6), 0 1px 3px rgba(255, 255, 255, 0.2);
     color: #fff;
     font-weight: 400;
     border: none;
-    padding: 10px 5px;
+    padding: 5px 0;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .ghbuttons button:hover {
+    box-shadow: 0 0px 6px rgba(37, 127, 184, 0.6), 0 1px 3px rgba(255, 255, 255, 0.2);
     background-color: rgb(0, 105, 217); 
 }
 
@@ -288,25 +310,24 @@ p {
 
 .nav-button {
     background-color: #2c9e52;
-    box-shadow: 0 4px 6px rgba(44, 158, 82, 0.6), 0 1px 3px rgba(255, 255, 255, 0.2);
-    font-weight: 700;
+    font-family: "Jost";
+    font-weight: 400;
     margin: 30px 20px;
     color: white;
     border: none;
     padding: 10px 30px;
-    font-size: 1rem;
+    font-size: 0.8rem;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    box-shadow: 0 0px 6px rgba(44, 158, 82, 0.6), 0 1px 3px rgba(255, 255, 255, 0.2);
 }
 
 .nav-button:active {
     background-color: #19582e 
-}
-
-.ghcardprev, .ghcardnext {
-    transform: scale(0.8);
-    opacity: 0.5;
 }
 
 .screenshot img:hover {
@@ -350,7 +371,7 @@ p {
     }
     
     .section {
-        height: 700px;
+        height: 600px;
         margin-top: inherit;
         padding-top: 100px;
         font-size: 1.5rem; 
@@ -443,7 +464,12 @@ p {
         height: 200px;
     }
 
-    .ghcardprev, .ghcardnext {
+    .ghcardcurr {
+        transform: none;
+    }
+
+    .ghcardprev, .ghcardnext, .ghcardprevtsn, .ghcardnexttsn  {
         display: none;
+        transform: none;
     }
 }

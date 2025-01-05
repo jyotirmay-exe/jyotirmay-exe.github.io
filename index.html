@@ -49,6 +49,7 @@
             <div>
                 <h1>About Me</h1>
                 <p style="max-width: 700px;">I am Jyotirmay Kumar Jha, currently pursuing B.Sc. (Voc. Hons.) Computer Application, and an aspiring backend web developer.<br><br>Being intrigued by computers from a young age, working on personal projects, I have developed skills in programming, which I strive to improve.<br><br>Some of my interests and skill set include web development using <strong>JavaScript</strong>, <strong>Node.JS</strong>, <strong>Flask</strong>,</strong> and database technologies like <strong>MySQL</strong>, <strong>PostgreSQL</strong>, and a little bit of <strong>MongoDB</strong><br><br>I have also worked on back-end/CLI based scripting using Python for several projects, some of which can be found on my <a href="https://github.com/jyotirmay-exe" target="_blank">GitHub profile</a>.<br><br>I'm a proactive learner who loves tackling challenges and collaborating with others. I enjoy participating in open-source projects and contributing to the tech community.<br><br>I am eager to further learn and grow in the field of computer science.</p>
+                <img src="https://ghchart.rshah.org/jyotirmay-exe" alt="GitHub Contributions Calendar" width="100%" style="filter: invert(1) hue-rotate(180deg);">
             </div>
         </div>
 
@@ -67,7 +68,7 @@
                         <p>Java</p>
                     </div>
                     <div class="skillunit">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" alt="" title="PYTHON">
+                        <img src="https://cdn.iconscout.com/icon/free/png-256/free-python-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-vol-5-pack-logos-icons-2945099.png" alt="" title="PYTHON">
                         <p>Python</p>
                     </div>
                     <div class="skillunit">
@@ -130,7 +131,7 @@
             <p style="padding-bottom: 0px;">Throughout my journey, I have worked on various projects that showcase my skills and creativity:</p>
 
             <div class="sub-category" style="flex-direction: row">
-                <div class="ghcard ghcardprev">
+                <div class="ghcard ghcardprev" onclick="prevProject()">
                     <div class="ghcard-content">
                         <div class="screenshot">
                             <img id="proj-ss0" src="" alt="Project Screenshot">
@@ -142,7 +143,7 @@
                     </div>
                 </div>
 
-                <div class="ghcard ghcardcurr">
+                <div class="ghcard ghcardcurr" style="z-index: 1000; opacity: 1;">
                     <div class="ghcard-content">
                         <div class="screenshot">
                             <img id="proj-ss" src="" alt="Project Screenshot">
@@ -152,11 +153,10 @@
                             <p id="proj-desc" style="height: 2rem;"></p>
                         </div>
                         <div class="tags">
-                            <div class="tag">#html</div> <div class="tag">#css</div> <div class="tag">#js</div>
                         </div>
                         <div class="ghbuttons">
-                            <button class="ghbutton" onclick="window.open('#', '_blank')">GitHub Repo</button>
-                            <button class="ghbutton" onclick="window.open('#', '_blank')">Live Link</button>
+                            <button class="ghbutton" onclick="window.open('#', '_blank')">GitHub</button>
+                            <button class="ghbutton" onclick="window.open('#', '_blank')">Live</button>
                         </div>
                     </div>
                     <div class="nav-buttons">
@@ -165,7 +165,7 @@
                     </div>
                 </div>
 
-                <div class="ghcard ghcardnext">
+                <div class="ghcard ghcardnext" onclick="nextProject()">
                     <div class="ghcard-content">
                         <div class="screenshot">
                             <img id="proj-ss1" src="" alt="Project Screenshot">

@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     hello.innerHTML = currentText.substring(0, currentText.length - 10);
 
     cycleHoverEffect();
-    updateCard();
 });
 
 function toggleMenu() {
@@ -27,48 +26,21 @@ function toggleMenu() {
     navLinks.classList.toggle("active");
 }
 
-const projects = [
-    {
-        name: "Flask Chat Hub",
-        description: "A real-time socket-based chat application built with Flask.",
-        repo: "https://github.com/jyotirmay-exe/flask-chatHUB",
-        live: "https://flask-chatHUB.onrender.com",
-        screenshot: "/img/chathub.png",
-        tags: ["python", "flask", "socket.io"]
-    },
-    {
-        name: "Sorting Visualizer",
-        description: "Interactive sorting algorithm visualizer built with JavaScript.",
-        repo: "https://github.com/jyotirmay-exe/sorting-visualizer",
-        live: "https://web-sorting-visualizer.netlify.app/",
-        screenshot: "/img/sort.png",
-        tags: ["html/css", "javascript", "dsa"]
-    },
-    {
-        name: "HangMan Game",
-        description: "Web HangMan game built using HTML, CSS & JS.",
-        repo: "https://github.com/jyotirmay-exe/HangMan",
-        live: "https://simple-web-hangman.netlify.app/",
-        screenshot: "/img/hangman.png",
-        tags: ["html/css", "javascript", "hangman"]
-    },
-    {
-        name: "b3-plugin-disCOD",
-        description: "A B3 plugin for Call of Duty 4 Discord Bot 'disCOD'.",
-        repo: "https://github.com/jyotirmay-exe/b3-plugin-disCOD",
-        live: null,
-        screenshot: "/img/discod.png",
-        tags: ["python", "mysql", "big-brother-bot"]
-    },
-    {
-        name: "COD4 RCON",
-        description: "Python Remote CLI RCON client for Call of Duty 4 servers.",
-        repo: "https://github.com/jyotirmay-exe/py-cod4_rcon",
-        live: null,
-        screenshot: "/img/rcon.png",
-        tags: ["python", "cod4", "sockets", "udp"]
-    },
-];
+
+let projects = null;
+fetch('projects.json')
+  .then(response => {
+    return response.json();
+  })
+  .then(prj => {
+    projects = prj;
+    preloadImages(projects);
+    updateCard();
+  })
+  .catch(error => {
+    console.error('Error fetching the projects:', error);
+  });
+
 
 function preloadImages(projects) {
     projects.forEach(project => {
@@ -76,7 +48,6 @@ function preloadImages(projects) {
         img.src = project.screenshot;
     });
 }
-preloadImages(projects);
 
 let i = 0;
 function updateCard() {
@@ -123,36 +94,36 @@ function prevProject() {
 
     const prevCard = document.querySelector(".ghcardprev");
     const currCard = document.querySelector(".ghcardcurr");
-    const nextCard = document.querySelector(".ghcardnext");
+    // const nextCard = document.querySelector(".ghcardnext");
 
-    prevCard.className = "ghcard ghcardnext";
-    currCard.className = "ghcard ghcardcurr";
-    nextCard.className = "ghcard ghcardprev";
+    prevCard.className = "ghcard ghcardprevtsn";
+    currCard.className = "ghcard ghcardcurrtsn";
+    // nextCard.className = "ghcard ghcardprev";
 
     setTimeout(() => {
+        updateCard();
         prevCard.className = "ghcard ghcardprev";
         currCard.className = "ghcard ghcardcurr";
-        nextCard.className = "ghcard ghcardnext";
-        updateCard();
+        // nextCard.className = "ghcard ghcardnext";
     }, 300);
 }
 
 function nextProject() {
     i = (i + 1) % projects.length;
 
-    const prevCard = document.querySelector(".ghcardprev");
+    // const prevCard = document.querySelector(".ghcardprev");
     const currCard = document.querySelector(".ghcardcurr");
     const nextCard = document.querySelector(".ghcardnext");
 
-    prevCard.className = "ghcard ghcardnext";
-    currCard.className = "ghcard ghcardcurr";
-    nextCard.className = "ghcard ghcardprev";
+    // prevCard.className = "ghcard ghcardnext";
+    currCard.className = "ghcard ghcardcurrtsn";
+    nextCard.className = "ghcard ghcardnexttsn";
 
     setTimeout(() => {
-        prevCard.className = "ghcard ghcardprev";
+        updateCard();
+        // prevCard.className = "ghcard ghcardprev";
         currCard.className = "ghcard ghcardcurr";
         nextCard.className = "ghcard ghcardnext";
-        updateCard();
     }, 300);
 }
 
